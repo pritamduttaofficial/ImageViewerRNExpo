@@ -1,23 +1,16 @@
-import { Button, StyleSheet, Text, View, SafeAreaView } from "react-native";
-import React from "react";
-import { Link } from "expo-router";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import suggested from "../suggested";
+import liked from "../liked";
+import library from "../library";
 
-const index = () => {
+const Tab = createMaterialTopTabNavigator();
+
+export default function ForYou() {
   return (
-    <SafeAreaView>
-      <Link href={"/suggested"}>
-        <Text>Suggested</Text>
-      </Link>
-      <Link href={"/library"}>
-        <Text>Library</Text>
-      </Link>
-      <Link href={"/liked"}>
-        <Text>Liked</Text>
-      </Link>
-    </SafeAreaView>
+    <Tab.Navigator>
+      <Tab.Screen name="LIBRARY" component={library} />
+      <Tab.Screen name="LIKED" component={liked} />
+      <Tab.Screen name="SUGGESTED" component={suggested} />
+    </Tab.Navigator>
   );
-};
-
-export default index;
-
-const styles = StyleSheet.create({});
+}

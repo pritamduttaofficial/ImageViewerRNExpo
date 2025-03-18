@@ -3,7 +3,7 @@ import React from "react";
 
 const accountInfo = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ backgroundColor: "grey", flex: 1 }}>
       <Text>Account Info Page</Text>
     </SafeAreaView>
   );
